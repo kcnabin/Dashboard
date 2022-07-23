@@ -1,0 +1,74 @@
+body {
+	background-color: black;
+}
+
+:root {
+	--header-padding: 20px;
+}
+
+.sidebar {
+	grid-area: sidebar;
+	background-color: #2b5b93;
+
+}
+
+.header {
+	grid-area: header;
+	background-color: white;
+}
+
+.header * {
+	border: 1px solid darkred;
+}
+.header-upper {
+	
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: var(--header-padding);
+}
+.search-bar {
+	display: flex;
+	height: 30px;
+	gap: 15px;
+}
+.user-info {
+	display: flex;
+	align-items: center;
+	gap: 30px;
+}
+
+.search-bar > input {
+	width: 300px;
+	border-radius: 8px;
+	background-color: #e2e8f0;
+	border: none;
+	padding: 5px;
+}
+
+.user-image {
+	height: 30px;
+	border-radius: 50%;
+
+}
+.projects {
+	grid-area: projects;
+	background-color: saddlebrown;
+
+}
+.announce {
+	grid-area: announce;
+	background-color: skyblue;
+}
+
+.icon {
+	height: 25px;
+}
+.project-dashboard {
+	display: grid;
+	grid-template-columns: 150px 2fr 1fr;
+	grid-template-rows: 150px 500px;
+	grid-template-areas: 
+		"sidebar header header"
+		"sidebar projects announce";
+}
