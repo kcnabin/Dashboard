@@ -4,6 +4,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Nabin's Dashboard</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="reset.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -12,18 +15,68 @@
 		<div class="header">
 			<div class="header-upper">
 				<div class="search-bar">
-					<img src="images/search_icon.svg" alt="search icon" class="icon">
+					<img src="images/menu.svg" class="hamMenu">
 					<input type="text" id="search-area" name="search">
+					<img src="images/search_icon.svg" alt="search icon" class="icon">
 				</div>
 				<div class="user-info">
 					<img src="images/notify_icon.svg" alt="notify icon" class="icon">
 					<img class="user-image" src="images/user_image.jpg" alt="user photo">
-					<span>Nabin K.C.</span>
+					<span><a href="#">Nabin KC</a></span>
 				</div>	
+			</div>
+			<div class="header-lower">
+				<div class="uinfo">
+					<img class="big-icon" src="images/user_image.jpg">
+					<div class="welcome-msg">
+						<span>Hi there,</span>
+						<h2>Nabin KC (@kcnabin) </h2>
+					</div>
+				</div>
+				<div class="uploads">
+					<button><a href="#">New</a></button>
+					<button><a href="#">Upload</a></button>
+					<button><a href="#">Share</a></button>
+				</div>
+
 			</div>
 			
 		</div>
 		<div class="sidebar">
+			<div class="site-logo">
+				<img src="images/menu.svg" alt="menu icon">
+				<a href="#">Dashboard</a>
+			</div>
+
+			<div class="upper-nav">
+				<div class="home">
+					<img src="images/home.svg" alt="">
+					<a href="#">Home</a>
+				</div>
+				<div class="profile">
+					<img src="images/profile.svg" alt="">
+					<a href="#">Profile</a>
+				</div>
+				<div class="messages">
+					<img src="images/messages.svg" alt="">
+					<a href="#">Messages</a>
+				</div>
+				<div class="history">
+					<img src="images/history.svg" alt="">
+					<a href="#">History</a>
+				</div>
+				<div class="task">
+					<img src="images/task.svg" alt="">
+					<a href="#">Task</a>
+				</div>
+				<div class="community">
+					<img src="images/community.svg" alt="">
+					<a href="#">Community</a>
+				</div>
+			</div>
+			<div class="lower-nav">
+				
+			</div>
 			
 		</div>
 		<div class="projects">
@@ -33,5 +86,32 @@
 			
 		</div>
 	</div>
+
+	<script type="text/javascript">
+			const sideBar = document.querySelector(".sidebar");
+			const menu = document.querySelector(".site-logo > img");
+			const hamMenu = document.querySelector(".hamMenu");
+
+			function hideSideBar() {
+				document.querySelector(".project-dashboard").style.gridTemplateAreas = '"header header" "projects announce"';
+				document.querySelector(".project-dashboard").style.gridTemplateColumns = "2fr 1fr";
+				sideBar.style.display = "none";
+				hamMenu.style.display = "block";
+			}
+
+			function showSideBar() {
+				document.querySelector(".project-dashboard").style.gridTemplateAreas = 
+													'"sidebar header header" "sidebar projects announce"';
+				document.querySelector(".project-dashboard").style.gridTemplateColumns = "170px 2fr 1fr";
+				sideBar.style.display = "block";
+				hamMenu.style.display = "none";
+			}
+
+
+			
+			menu.addEventListener("click", hideSideBar);
+			hamMenu.addEventListener("click", showSideBar);
+
+	</script>
 </body>
 </html>

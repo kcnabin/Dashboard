@@ -1,15 +1,14 @@
 body {
-	background-color: black;
+	/*background-color: black;*/
 }
-
 :root {
-	--header-padding: 20px;
+	--header-padding: 12px 25px 12px 25px;
+	--sidebar-lPadding: 5px;
+	font-family: 'Open Sans', sans-serif;
 }
-
-.sidebar {
-	grid-area: sidebar;
-	background-color: #2b5b93;
-
+a, a:hover, a:visited {
+	color: inherit;
+	text-decoration: none;
 }
 
 .header {
@@ -17,43 +16,84 @@ body {
 	background-color: white;
 }
 
-.header * {
-	border: 1px solid darkred;
-}
 .header-upper {
-	
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: var(--header-padding);
 }
+
+.user-info {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+.user-info > span {
+	font-weight: bold;
+}
+
 .search-bar {
 	display: flex;
 	height: 30px;
 	gap: 15px;
 }
-.user-info {
-	display: flex;
-	align-items: center;
-	gap: 30px;
+.hamMenu {
+	display: none;
 }
-
+.hamMenu:hover {
+	cursor: grab;
+}
 .search-bar > input {
 	width: 300px;
-	border-radius: 8px;
+	border-radius: 10px;
 	background-color: #e2e8f0;
 	border: none;
-	padding: 5px;
+	padding: 5px 10px 5px 10px;
 }
 
 .user-image {
 	height: 30px;
 	border-radius: 50%;
+}
+
+.header-lower {
+	display: flex;
+	justify-content: space-between;
+	padding: var(--header-padding);
+}
+
+.uinfo {
+	display: flex;
+	gap: 10px;
+}
+
+.welcome-msg > span {
+	padding: 4px;
+	font-size: 0.8rem;
+}
+.welcome-msg > h2 {
+	padding: 4px;
+	font-weight: bold;
+	font-size: 1.25rem;
+}
+.uploads {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+.uploads > button {
+	font-size: 1rem;
+	font-weight: bold;
+	padding: 4px 10px 4px 10px;
+	background-color: #2b5b93;
+	color: white;
+	border-radius: 12px;
 
 }
+
 .projects {
 	grid-area: projects;
-	background-color: saddlebrown;
+	background-color: #e2e8f0;
 
 }
 .announce {
@@ -64,11 +104,62 @@ body {
 .icon {
 	height: 25px;
 }
+
+.big-icon {
+	height: 50px;
+	border-radius: 50%;
+}
 .project-dashboard {
 	display: grid;
-	grid-template-columns: 150px 2fr 1fr;
-	grid-template-rows: 150px 500px;
+	grid-template-columns: 170px 2fr 1fr;
+	grid-template-rows: 130px 500px;
 	grid-template-areas: 
 		"sidebar header header"
 		"sidebar projects announce";
+}
+
+/*sidebar*/
+.sidebar {
+	grid-area: sidebar;
+	background-color: #809fff;
+	padding-left: var(--sidebar-lPadding);
+}
+
+.site-logo {
+	display: flex;
+	align-items: center;
+	margin-bottom: 30px;
+	margin-top: 2px;
+}
+
+.site-logo > img {
+	width: 30px;
+	padding: 10px;
+}
+.site-logo > img:hover {
+	cursor: grab;
+}
+
+.site-logo > a {
+	font-weight: bold;
+	font-size: 1rem;
+	padding: 10px 10px 10px 0px;
+}
+/*.sidebar * {
+	border: 1px solid;
+}*/
+.upper-nav > div {
+	display: flex;
+	align-items: center;
+}
+
+.upper-nav > div:hover {
+	transform: scale(1.05);
+	font-weight: bold;
+}
+
+.upper-nav > div > img {
+	width: 30px;
+	height: 30px;
+	padding: 10px;
 }
