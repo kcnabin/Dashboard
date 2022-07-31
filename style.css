@@ -82,12 +82,12 @@ a, a:hover, a:visited {
 	gap: 16px;
 }
 .uploads > button {
-	font-size: 1rem;
+	font-size: 0.75rem;
 	font-weight: bold;
-	padding: 4px 10px 4px 10px;
+	padding: 2px 8px 2px 8px;
 	background-color: #2b5b93;
 	color: white;
-	border-radius: 12px;
+	border-radius: 8px;
 
 }
 
@@ -95,10 +95,6 @@ a, a:hover, a:visited {
 	grid-area: projects;
 	background-color: #e2e8f0;
 
-}
-.announce {
-	grid-area: announce;
-	background-color: skyblue;
 }
 
 .icon {
@@ -111,8 +107,8 @@ a, a:hover, a:visited {
 }
 .project-dashboard {
 	display: grid;
-	grid-template-columns: 170px 2fr 1fr;
-	grid-template-rows: 130px 500px;
+	grid-template-columns: 170px 2fr 250px;
+	grid-template-rows: 130px auto;
 	grid-template-areas: 
 		"sidebar header header"
 		"sidebar projects announce";
@@ -130,6 +126,7 @@ a, a:hover, a:visited {
 	align-items: center;
 	margin-bottom: 30px;
 	margin-top: 2px;
+	padding: 10px 0px 0px 0px;
 }
 
 .site-logo > img {
@@ -162,4 +159,70 @@ a, a:hover, a:visited {
 	width: 30px;
 	height: 30px;
 	padding: 10px;
+}
+
+
+.projects {
+	padding: 10px;
+}
+.projects > h2 {
+	font-weight: bold;
+	padding: 10px;
+	font-size: 1rem;
+}
+
+.all-projects {
+	padding: 10px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 20px;
+}
+
+.all-projects > div {
+	border-radius: 10px;
+	background-color: white;
+	border: 1px solid white;
+	border-left: 5px solid gold;
+	
+}
+
+.all-projects > div:hover {
+	border: 1px solid gold;
+	border-left: 5px solid gold;
+}
+
+.all-projects > div > h3 {
+	font-weight: bold;
+	padding: 15px;
+}
+
+.all-projects > div > p {
+	font-size: 0.75rem;
+	padding: 0px 10px 10px 15px;
+}
+
+.project-image > a > img {
+	width: 150px;
+	height: 84px;
+	padding: 0px 10px 10px 15px;
+}
+
+/*project section*/
+
+.like-save-share {
+	display: flex;
+	justify-content: flex-end;
+}
+.icons > img {
+	padding: 10px 10px 10px 15px;
+	width: 20px;
+}
+
+/*.header * {
+	border: 1px solid red;
+}*/
+
+.announce {
+	grid-area: announce;
+	background-color: #93ccc6;
 }
